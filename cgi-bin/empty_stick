@@ -8,6 +8,9 @@ if [[ $(mount | grep "/media/BACKUP type") ]]; then
     rm /media/BACKUP/* -r
     echo "Tikku on tyhjennetty<br><br>"
     
+    # Make sure empty/ exists
+    mkdir empty 2>/dev/null
+    
     echo "Aloitetaan vanhojen varmuuskopioiden poistaminen tiikeriltä<br><br>"
     rsync -r --delete empty/ root@vtiger:/var/www/html/vtigerCRM/backup
     echo "Vanhat varmuuskopiot on poistettu."
