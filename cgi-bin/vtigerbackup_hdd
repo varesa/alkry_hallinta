@@ -8,7 +8,7 @@ DATE="$(date +%F_%H-%M)"
 
 TMPPATH="/tmp/backup_tmp"
 
-if [[ $(mount | grep "/media/BACKUP type") ]]; then
+if [[ $(mount | grep "/mnt/backuphd type") ]]; then
     echo "Varmuuskopioidaan<br><br>"
     
     mkdir -p $BASEPATH/$DATE/
@@ -28,5 +28,5 @@ if [[ $(mount | grep "/media/BACKUP type") ]]; then
     touch $BASEPATH/uusin_$(date +%F_%H-%M).time
     echo "Jos edellä ei esiintynyt virheitä, on varmuuskopiointi nyt valmis!"
 else
-    echo "Tikkua ei löydy"
+    echo "Kiintoleyä ei löydy"
 fi
