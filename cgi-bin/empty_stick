@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Herätetään automount / autofs
+ls /media/BACKUP/ &>/dev/null
+
+if [[ $(mount | grep "/media/BACKUP type") ]]; then
+    echo "Aloitetaan tikun tyhjennys<br><br>"
+    rm /media/BACKUP/* -r
+    echo "Tikku on tyhjennetty<br><br>"
+    
+    echo "Aloitetaan vanhojen varmuuskopioiden poistaminen tiikeriltä<br><br>"
+    rsync -r --delete empty/ root@vtiger:/var/www/html/vtigerCRM/backup
+    echo "Vanhat varmuuskopiot on poistettu."
+else
+    echo "Tikkua ei löydy"
+fi

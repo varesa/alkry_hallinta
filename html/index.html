@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<title>Palvelimen hallinta</title>
+</head>
+
+<h2>Joka päivä:</h2>
+
+
+<form action="/cgi-bin/vtigerbackup.cgi" method="GET">
+<input type="submit" value="Kopioi varmuuskopiot tikulle"  style="width: 300px"/>
+</form>
+
+<form action="/cgi-bin/sammuta.cgi" method="GET">
+<input type="submit" value="Sammuta palvelin (vm ja kone)" style="width: 300px"/>
+</form>
+
+<br>
+
+<h2>Tikunvaihtopäivä: </h2>
+
+<form action="/cgi-bin/vtigerbackup.cgi" method="GET">
+<input type="submit" value="Kopioi varmuuskopiot tikulle" style="width: 300px"/>
+</form>
+
+<form action="/cgi-bin/umountstick.cgi" method="GET">
+<input type="submit" value="Ennen tikun irroitusta!"      style="width: 300px"/>
+</form>
+
+<br>
+Vaihda tikku, ja odota noin 15 sec.
+<br><br>
+
+<form action="/cgi-bin/emptystick.cgi" method="GET">
+<input type="submit" value="Tyhjennä uusi tikku" style="width: 300px"/>
+</form>
+
+<form action="/cgi-bin/sammuta.cgi" method="GET">
+<input type="submit" value="Sammuta palvelin (vm ja kone)" style="width: 300px" />
+</form>
+
+<br>
+
+<hr>
+
+<h2>Täysi varmuuskopio kiintolevylle:</h2>
+
+<form action="/cgi-bin/fullbackup.cgi" method="GET">
+<input type="submit" value="Ota täysi varmuuskopio koneesta"      style="width: 300px"/>
+</form>
+
+<form action="/cgi-bin/checkrsync.cgi" method="GET">
+<input type="submit" value="Tarkista onko varmuuskopio käynnissä" style="width: 300px"/>
+</form>
+
+<form action="/cgi-bin/umounthd.cgi" method="GET">
+<input type="submit" value="Irroita kiintolevy"                   style="width: 300px"/>
+</form>
+
+<br><br>
+
+<hr>
+
+<br><br><br><br>
+
+<h2>Ylläpito:</h2>
+
+<h3>Sammuta:</h3>
+
+<form action="/cgi-bin/sammuta.cgi" method="GET">
+<input type="submit" value="Sammuta palvelin (vm ja kone)"   style="width: 300px"/>
+</form>
+
+<h3>Virtuaalikoneen hallinta:</h3>
+<form action="/cgi-bin/startvm.cgi" method="GET">
+<input type="submit" value="Käynnistä vTiger -virtuaalikone" style="width: 300px"/>
+</form>
+
+<form action="/cgi-bin/stopvm.cgi" method="GET">
+<input type="submit" value="Pysäytä vTiger -virtuaalikone"   style="width: 300px"/>
+</form>
+
+
+
+<h3>Etähallinta: </h3>
+
+<form action="/cgi-bin/remoteon.cgi" method="GET">
+<input type="submit" value="Ota käyttöön etähallinta"    style="width: 300px"/>
+</form>
+
+
+<form action="/cgi-bin/remoteoff.cgi" method="GET">
+<input type="submit" value="Poista etähallinta käytöstä" style="width: 300px"/>
+</form>
+
+
+<body>
+</body>
+</html>
+

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Herätetään automount / autofs
+ls /media/BACKUPLEVY_OS/ &>/dev/null
+ls /media/BACKUPLEVY_TIGER/ &>/dev/null
+
+if [[ $(mount | grep "/media/BACKUPLEVY") ]]; then
+    echo "Varmuuskopioidaan host-konetta<br><br>"
+    rsync -a /* /media/BACKUPLEVY_OS/ --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/net/*,/lost+found,/home/*/.gvfs,/vms/*}
+    echo "Varmuuskopioidaan vtiger-virtuaalikonetta<br><br>"
+    rsync -a root@192.168.0.107:/* /media/BACKUPLEVY_TIGER/ --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/net/*,/lost+found,/home/*/.gvfs}
+    echo "Jos edellä ei esiintynyt virheitä, on varmuuskopiointi nyt valmis!"
+else
+    echo "Kiintolevyä ei löydy"
+fi

@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Herätetään automount / autofs
+ls /media/BACKUP/ &>/dev/null
+
+BASEPATH="/media/BACKUP"
+DATE="$(date +%F_%H-%M)"
+
+TMPPATH="/tmp/backup_tmp"
+
+if [[ $(mount | grep "/media/BACKUP type") ]]; then
+    echo "Varmuuskopioidaan<br><br>"
+    
+    mkdir -p $BASEPATH/$DATE/
+    #mkdir -p $TMPPATH
+
+    #rsync -rltD --remove-sent-files root@vtiger:/var/www/html/vtigerCRM/backup $TMPPATH/
+    #rsync -rltD root@vtiger:/var/www/html/vtigerCRM/storage $TMPPATH/
+    #rsync -rltD root@vtiger:/var/www/html/vtigerCRM/user_privileges  $TMPPATH/
+    
+    #cd $TMPPATH
+    #tar cjf $BASEPATH/$DATE tar.bz2 storage user_privileges backup
+    #cd -
+    
+    sudo su -c "rsync -va --remove-sent-files --no-owner --no-group --no-perms 'root@vtiger:/var/www/html/vtigerCRM/*.zip' $BASEPATH/$DATE/"
+    
+    rm $BASEPATH/*.time 2>/dev/null # Do not error if file does not exist
+    touch $BASEPATH/uusin_$(date +%F_%H-%M).time
+    echo "Jos edellä ei esiintynyt virheitä, on varmuuskopiointi nyt valmis!"
+else
+    echo "Tikkua ei löydy"
+fi
