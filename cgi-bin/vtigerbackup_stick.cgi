@@ -6,7 +6,7 @@ charset('utf-8');
 print header();
 print start_html(-title=>"Varmuuskopioi", -encoding=>"utf-8");
     
-open (STATUS, 'sudo ./vtigerbackup 2>&1 |');
+open (STATUS, 'sudo ./vtigerbackup_stick 2>&1 |');
     $i=1;
     while (<STATUS>){
 	print $_."<br>";

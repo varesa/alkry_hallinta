@@ -9,8 +9,44 @@
 
 <h2>Joka päivä:</h2>
 
+<form action="/cgi-bin/vtigerbackup_hdd.cgi" method="GET">
+<input type="submit" value="Kopioi varmuuskopiot levylle"  style="width: 300px"/>
+</form>
 
-<form action="/cgi-bin/vtigerbackup.cgi" method="GET">
+<form action="/cgi-bin/sammuta.cgi" method="GET">
+<input type="submit" value="Sammuta palvelin (vm ja kone)" style="width: 300px"/>
+</form>
+
+<br>
+
+<hr>
+
+<h2>Täysi varmuuskopio ulkoiselle kiintolevylle:</h2>
+
+<form action="/cgi-bin/fullbackup.cgi" method="GET">
+<input type="submit" value="Ota täysi varmuuskopio koneesta"      style="width: 300px"/>
+</form>
+
+<form action="/cgi-bin/checkrsync.cgi" method="GET">
+<input type="submit" value="Tarkista onko varmuuskopio käynnissä" style="width: 300px"/>
+</form>
+
+<form action="/cgi-bin/umounthd.cgi" method="GET">
+<input type="submit" value="Irroita kiintolevy"                   style="width: 300px"/>
+</form>
+
+<br><br>
+
+<hr>
+
+<br><br><br><br>
+
+<h1>Poikkeustoimenpiteet</h1>
+
+<h2>Tikkuvarmuuskopio</h2>
+
+
+<form action="/cgi-bin/vtigerbackup_stick.cgi" method="GET">
 <input type="submit" value="Kopioi varmuuskopiot tikulle"  style="width: 300px"/>
 </form>
 
@@ -43,28 +79,6 @@ Vaihda tikku, ja odota noin 15 sec.
 </form>
 
 <br>
-
-<hr>
-
-<h2>Täysi varmuuskopio kiintolevylle:</h2>
-
-<form action="/cgi-bin/fullbackup.cgi" method="GET">
-<input type="submit" value="Ota täysi varmuuskopio koneesta"      style="width: 300px"/>
-</form>
-
-<form action="/cgi-bin/checkrsync.cgi" method="GET">
-<input type="submit" value="Tarkista onko varmuuskopio käynnissä" style="width: 300px"/>
-</form>
-
-<form action="/cgi-bin/umounthd.cgi" method="GET">
-<input type="submit" value="Irroita kiintolevy"                   style="width: 300px"/>
-</form>
-
-<br><br>
-
-<hr>
-
-<br><br><br><br>
 
 <h2>Ylläpito:</h2>
 
